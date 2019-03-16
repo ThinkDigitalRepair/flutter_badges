@@ -15,7 +15,8 @@ class BadgeIconButton extends StatefulWidget {
   final BadgePosition position;
   final BadgeShape shape;
   final TextStyle textStyle;
-  final EdgeInsets padding;
+  final EdgeInsets badgePadding;
+  final EdgeInsets iconPadding;
   final Duration animationDuration;
 
   BadgeIconButton(
@@ -23,17 +24,18 @@ class BadgeIconButton extends StatefulWidget {
       @required this.itemCount,
       @required this.icon,
       this.onPressed,
-      this.hideZeroCount: true,
-      this.badgeColor: Colors.red,
-      this.toAnimate: true,
-      this.position: BadgePosition.topRight,
-      this.shape: BadgeShape.circle,
-      this.textStyle: const TextStyle(
+      this.hideZeroCount = true,
+      this.badgeColor = Colors.red,
+      this.toAnimate = true,
+      this.position = BadgePosition.topRight,
+      this.shape = BadgeShape.circle,
+      this.textStyle = const TextStyle(
         fontSize: 13.0,
         color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
-      this.padding: const EdgeInsets.all(5.0),
+      this.badgePadding = const EdgeInsets.all(5.0),
+      this.iconPadding,
       this.animationDuration: const Duration(milliseconds: 500)})
       : assert(itemCount >= 0),
         assert(badgeColor != null),
@@ -61,6 +63,7 @@ class BadgeIconButtonState extends State<BadgeIconButton>
       return IconButton(
         icon: widget.icon,
         onPressed: widget.onPressed,
+        padding: widget.iconPadding,
       );
     }
 
@@ -90,7 +93,7 @@ class BadgeIconButtonState extends State<BadgeIconButton>
         elevation: 2.0,
         color: widget.badgeColor,
         child: Padding(
-          padding: widget.padding,
+          padding: widget.badgePadding,
           child: Text(
             widget.itemCount.toString(),
             style: widget.textStyle,

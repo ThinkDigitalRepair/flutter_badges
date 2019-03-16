@@ -7,6 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: _buildTheme(),
       home: MyHomePage(),
     );
@@ -72,6 +73,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.white,
                     fontWeight: FontWeight.bold),
                 position: BadgePosition.bottomRight,
+                onPressed: () {}),
+            BadgeIcon(
+                itemCount: _counter,
+                badgeColor: _color,
+                icon: _icon,
+                iconPadding: EdgeInsets.all(15),
+                badgePadding: EdgeInsets.all(2.0),
+                shape: BadgeShape.card,
+                animationDuration: Duration(seconds: 2),
+                textStyle: TextStyle(
+                    fontSize: 10.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+                position: BadgePosition.topRight,
                 onPressed: () {}),
           ],
         ),

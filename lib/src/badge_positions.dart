@@ -13,7 +13,7 @@ class BadgePositioned extends StatelessWidget {
       case BadgePosition.topLeft:
         return Positioned(top: -8.0, left: -3.0, child: child);
       case BadgePosition.topRight:
-        return Positioned(top: -8.0, right: -3.0, child: child);
+        return Positioned(top: -6.0, right: -1.0, child: child);
       case BadgePosition.center:
         return Positioned(child: child);
       case BadgePosition.bottomLeft:

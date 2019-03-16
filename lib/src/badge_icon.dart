@@ -7,7 +7,7 @@ class BadgeIcon extends StatefulWidget {
   final VoidCallback onPressed;
   final int itemCount;
   final Color badgeColor;
-  final IconData icon;
+  final Icon icon;
   final bool hideZeroCount;
   final bool toAnimate;
   final BadgePosition position;
@@ -60,9 +60,7 @@ class BadgeIconState extends State<BadgeIcon>
     if (widget.hideZeroCount && widget.itemCount == 0) {
       return Padding(
         padding: widget.iconPadding,
-        child: Icon(
-          widget.icon,
-        ),
+        child: widget.icon,
       );
     }
 
@@ -71,7 +69,7 @@ class BadgeIconState extends State<BadgeIcon>
       children: [
         Padding(
           padding: widget.iconPadding,
-          child: Icon(widget.icon),
+          child: widget.icon,
         ),
         BadgePositioned(
           position: widget.position,

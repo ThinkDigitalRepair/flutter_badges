@@ -35,7 +35,7 @@ class BadgeIconButton extends StatefulWidget {
         fontWeight: FontWeight.bold,
       ),
       this.badgePadding = const EdgeInsets.all(5.0),
-      this.iconPadding,
+      this.iconPadding = const EdgeInsets.all(8.0),
       this.animationDuration: const Duration(milliseconds: 500)})
       : assert(itemCount >= 0),
         assert(badgeColor != null),
